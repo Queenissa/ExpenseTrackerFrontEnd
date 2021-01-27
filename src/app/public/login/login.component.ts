@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       password : formData.password,
       grant_type : 'password',
       client_id : 2,
-      client_secret : 'Tv4digWNq4fHUDcpLD5Cn1UiZI4JacNirG2V6eS6',
+      client_secret : '0qQlD392L6TVSPOp4jBTmpljLvMmLyVA6iMQh7QR',
       scope : '*'
     };
     this.http.post( 'http://localhost:8000/oauth/token', data).subscribe(

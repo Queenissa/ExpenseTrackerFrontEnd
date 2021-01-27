@@ -9,9 +9,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AllComponent implements OnInit {
 
   user : any;
-  elements: any = [
-    { expense_date: '', expense_category: '', expense_amount: '', note : '' }
-  ];
+  data:any;
+  // elements: any = [
+  //   { expense_date: '', expense_category: '', expense_amount: '', note : '' }
+  // ];
+  elements:any = [];
 
   headElements = ['Expenditure Date', 'Type' ,'Amount', 'Description'];
   constructor(private http : HttpClient) { }
@@ -25,11 +27,17 @@ export class AllComponent implements OnInit {
       }
     }).subscribe(
       (result)=> {
-        console.log(result);
-        this.elements = result
+        this.data = result
+        for (const data of this.data) {
+          var date = new Date(data.expense_date);
+          let fullDate = date.getFullYear()+'-'+date.getMonth()+1+'-'+date.getDate()
+          let elementData = { expense_date: fullDate, expense_category: data.expense_category, expense_amount: data.expense_amount, note : data.note }
+          this.elements.push(elementData)
+        }
+        console.log(this.elements)
       }
       ,
-        error => {
+       error  => {
           console.log('error'),
           console.log(error)
         }
