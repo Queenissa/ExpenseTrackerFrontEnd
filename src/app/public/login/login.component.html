@@ -1,0 +1,47 @@
+<div class="container-fluid" >
+    <div class="row no-gutter">
+        <div class="d-none d-md-flex col-lg-6 bg-image">
+            <div class="mask">
+                <div class="overlay mx-auto">
+                    <h2 class="display-4">Welcome to</h2>
+                    <h3>Expenses Tracker!</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 bg-color">
+            <div class="login d-flex align-items-start py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <img src="../../../assets/image/logo.png" alt="" class="logo" height="90px;" width="90px;"
+                                class="logo mx-auto d-block">
+                            <form [formGroup]="form" class="form" (submit)="submit()">
+                                <h3 class="form-heading">Login</h3><br>
+                                <!-- Email input -->
+                                <div class="md-form mt-1">
+                                    <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+                                    <input mdbInput type="email" formControlName="email" class="form-control">
+                                    <label for="email" class="">Email</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="md-form mt-1">
+                                    <mdb-icon fas icon="key" class="prefix"></mdb-icon>
+                                    <input mdbInput type="password" formControlName="password" class="form-control">
+                                    <label for="password" class="">Password</label>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button type="submit" mdbBtn color="success" class="btn-block mb-3" mdbWavesEffect>Sign
+                                    In</button>
+                                <div class="text-center text-dark">
+                                    <p>Don't have an account? <a routerLink="../register">Sign Up</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

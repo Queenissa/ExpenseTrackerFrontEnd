@@ -1,0 +1,26 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading" *ngIf='user'>
+            <a [routerLink]="'profile'">
+                <i class="fa fa-user-circle fa-5x"></i>
+            </a>
+            <p>{{user.first_name}} {{user.last_name}}</p>
+        </div>
+        <div class="list-group list-group-flush">
+            <a [routerLink]="'dashboard'" class="list-group-item list-group-item-action bg-light"> <i class="fa fa-chart-line"> </i> &nbsp; Dashboard</a>
+            <a [routerLink]="'expenses'" class="list-group-item list-group-item-action bg-light"><i class="fa fa-plus-circle"> </i> &nbsp; Expenses</a>
+            <a [routerLink]="'expenses-report'" class="list-group-item list-group-item-action bg-light">
+                <i class="fas fa-clipboard-list"> </i> &nbsp; Expenses Report</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <button class="btn mt-4 float-left ml-2 h-5" style="background-color:gray;" id="menu-toggle" (click)='changeBtnValue()'><b>{{btnValue}}</b></button>
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>

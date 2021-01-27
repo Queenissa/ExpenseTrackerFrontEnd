@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: 0.75rem;
+  }
+
+  h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
+  .bg-image {
+    background-image: url("../../../assets/image/form-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 130vh;
+    color: #fff;
+    padding-top: 50px;
+  }
+
+  .mask {
+    background: linear-gradient(
+                45deg,
+                rgba(29, 236, 197, 0.7),
+                rgba(91, 14, 214, 0.7) 100%
+              );
+  }
+  
+  .overlay{
+    font-weight: bold;
+    text-shadow: 5px 5px 5px black;
+    margin-top: 14rem;
+    text-align: center;
+  }
+
+.bg-color {
+  height: 130vh;
+  background-color: white;
+}
+
+  .form-heading  {
+    margin-top: 1rem;
+    text-align: center;
+    color: gray;
+  }
+
+label {
+  text-align: left;
+}
+
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    border-radius: 2rem;
+  }
+
+.md-form .prefix {
+    left: 0.1rem;
+}
+.logo{
+  margin-top: 30%;
+}

@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col ml-5">
+            <canvas mdbChart [chartType]="chartType" [datasets]="dailyChartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="dailyChartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" id="dailyExpensesChart">
+            </canvas>
+            <h6 class="text-dark">Amount : {{dailyExpensesAmount}}</h6>
+        </div>
+        <div class="col">
+            <canvas mdbChart [chartType]="chartType" [datasets]="weeklyChartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="weeklyChartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" id="weeklyExpensesChart">
+            </canvas>
+            <h6 class="text-dark">Amount : {{dailyExpensesAmount}}</h6>
+        </div>
+        <div class="w-100"></div>
+        <div class="col ml-5">
+            <canvas mdbChart [chartType]="chartType" [datasets]="monthlyChartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="monthlyChartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" id="monthlyExpensesChart">
+            </canvas>
+            <h6 class="text-dark">Amount : {{dailyExpensesAmount}}</h6>
+        </div>
+        <div class="col ">
+            <canvas mdbChart [chartType]="chartType" [datasets]="yearlyChartDatasets" [labels]="chartLabels" [colors]="chartColors" [options]="yearlyChartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" id="yearlyExpensesChart">
+            </canvas>
+            <h6 class="text-dark">Amount : {{dailyExpensesAmount}}</h6>
+        </div>
+    </div>
+</div>

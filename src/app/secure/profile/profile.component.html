@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <h3 class="form-heading">Update Profile</h3>
+                <div class="row">
+                    <div class="col">
+                        <div class="md-form">
+                            <mdb-icon fas icon="user-alt" class="prefix"></mdb-icon>
+                            <input mdbInput type="text" formControlName="first_name" name="first_name" class="form-control">
+                            <label for="first_name" class="">Firstname</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form">
+
+                            <input mdbInput type="text" formControlName="last_name" name="last_name" class="form-control">
+                            <label for="last_name" class="">Lastname</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="md-form mt-1">
+                    <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+                    <input mdbInput type="email" formControlName="email" name="email" class="form-control">
+                    <label for="email" class="">Email</label>
+                </div>
+                <!-- Password input -->
+                <div class="md-form mt-1">
+                    <mdb-icon fas icon="unlock" class="prefix"></mdb-icon>
+                    <input mdbInput type="password" formControlName="password" name="password" class="form-control">
+                    <label for="password" class="">Password</label>
+                </div>
+                <div class="md-form mt-1">
+                    <mdb-icon fas icon="unlock" class="prefix"></mdb-icon>
+                    <input mdbInput type="password" formControlName="password_confirmation" name="password_confirmation" class="form-control">
+                    <label for="password_confirmation" class="">Confirm Password</label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" mdbBtn color="success" class="btn-block mb-3" routerLink='../../profile' mdbWavesEffect>Update</button>
+            </form>
+        </div>
+    </div>
+</div>
