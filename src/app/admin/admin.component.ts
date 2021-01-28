@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  // is_admin = false;
+  // user : any;
 
-  ngOnInit(): void {
+
+  constructor(private http : HttpClient,
+      private router : Router
+    ) { }
+
+  ngOnInit(): void {}
+
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['public'])
+
   }
-
 }

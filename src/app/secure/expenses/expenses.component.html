@@ -3,9 +3,9 @@
         <h5 class="card-title mt-3 mb-5">Add Expenses</h5>
         <form [formGroup]='form' (submit)="submit()">
             <div class="form-outline mb-3">
-                <label class="form-label" for="type">Type</label>
-                <select formControlName='expense_category' class="browser-default custom-select">
-                    <option selected>Select</option>
+                <label class="form-label" for="type">Category</label>
+                <select formControlName='expense_category' class="browser-default custom-select" required>
+                    <option value="" disabled selected>Select</option>
                     <option  value="Clothing">Clothing</option>
                     <option  value="Electricity">Electricity Bill</option>
                     <option  value="Food">Food</option>
@@ -18,17 +18,17 @@
             </div>
             <div class="form-outline mb-3">
                 <label class="form-label" for="amount">Amount</label>
-                <input formControlName='expense_amount' type="number" id="amount" class="form-control" />
+                <input formControlName='expense_amount' type="number" id="amount" class="form-control" placeholder="0" required/>
             </div>
             <div class="form-outline mb-3">
+                <label class="form-label" for="date">Note</label>
+                <textarea formControlName='note' type="text" id="date" name="date" class="form-control" placeholder="Please add notes here..." required></textarea>
+            </div>
+            <div class="form-outline mb-4">
                 <label class="form-label" for="date">Expenditure Date</label>
-                <input formControlName='expense_date' type="date" id="date" name="date" class="form-control">
+                <input formControlName='expense_date' type="date" id="date" name="date" class="form-control" required>
             </div>
-            <div class="form-outline mb-3">
-                <label class="form-label" for="date">Description</label>
-                <textarea formControlName='note' type="text" id="date" name="date" class="form-control"> </textarea >
-            </div>
-            <button type="submit" mdbBtn color="success" class="save" mdbWavesEffect>SAVE</button>
+            <button type="submit" mdbBtn color="success" class="btn btn-block mt-3" mdbWavesEffect>Save</button>
         </form>
     </div>
 </div>

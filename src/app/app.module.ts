@@ -1,3 +1,5 @@
+import { AdminModule } from './admin/admin.module';
+import { TokenInterceptor } from './inteceptors/token/token.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,16 +12,19 @@ import { SecureComponent } from './secure/secure.component';
 import { SecureModule } from './secure/secure.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminComponent } from './admin/admin.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
     SecureComponent,
     PageNotFoundComponent,
-    AdminComponent,
+    AdminComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
+    NgxPaginationModule,
     BrowserModule,
     AppRoutingModule,
     PublicModule,
@@ -27,9 +32,16 @@ import { AdminComponent } from './admin/admin.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    MDBBootstrapModule.forRoot()
+    // MDBBootstrapModule.forRoot(),
+    AdminModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide :HTTP_INTERCEPTORS,
+      useClass : TokenInterceptor,
+      multi :true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

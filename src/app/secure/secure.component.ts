@@ -48,4 +48,10 @@ export class SecureComponent implements OnInit {
   }
   }
 
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['public'])
+
+  }
+
 }

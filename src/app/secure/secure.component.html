@@ -1,9 +1,26 @@
+<header class="h-100">
+    <mdb-navbar SideClass="navbar fixed-top stylish-color-dark navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav waves-light" class="navCss" [containerInside]="false">
+        <mdb-navbar-brand>
+            <a class="logo navbar-brand" href="#">
+                <img id="myLogo" src="../../assets/image/logo.png" alt="">
+            </a>
+        </mdb-navbar-brand>
+        <links>
+            <ul class="navbar-nav" style="margin-left: 90%;">
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a routerLink='/' class="nav-link" (click)='logout()'>Log-out</a>
+                </li>
+            </ul>
+        </links>
+    </mdb-navbar>
+</header>
 <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading" *ngIf='user'>
             <a [routerLink]="'profile'">
-                <i class="fa fa-user-circle fa-5x"></i>
+                <!-- <i class="fa fa-user-circle fa-5x"></i> -->
+                <mdb-icon fas icon="user-circle" size="5x" class="text-dark"></mdb-icon>
             </a>
             <p>{{user.first_name}} {{user.last_name}}</p>
         </div>
@@ -17,7 +34,7 @@
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
-        <button class="btn mt-4 float-left ml-2 h-5" style="background-color:gray;" id="menu-toggle" (click)='changeBtnValue()'><b>{{btnValue}}</b></button>
+        <button class="text-light float-left ml-2 mt-4 h-5" style="background-color:gray;" id="menu-toggle" (click)='changeBtnValue()'>{{btnValue}}</button>
         <div class="container-fluid">
             <router-outlet></router-outlet>
         </div>

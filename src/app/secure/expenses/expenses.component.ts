@@ -29,7 +29,6 @@ export class ExpensesComponent implements OnInit {
 
   submit(){
     const formData = this.form.getRawValue();
-    console.log(formData);
     this.user = localStorage.getItem('user');
     
     formData.user_id = JSON.parse(this.user).id

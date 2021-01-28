@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { FoodComponent } from './food/food.component';
 import { SavingsComponent } from './savings/savings.component';
@@ -20,7 +21,7 @@ import { SavingsUpdateComponent } from './savings/savings-update/savings-update.
 import { TransportationUpdateComponent } from './transportation/transportation-update/transportation-update.component';
 import { WaterBillUpdateComponent } from './water-bill/water-bill-update/water-bill-update.component';
 import { AllComponent } from './all/all.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -46,8 +47,11 @@ import { AllComponent } from './all/all.component';
   ],
   imports: [
     CommonModule,
+    NgxPaginationModule,
     ExpensesReportRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ExpensesReportModule { }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  user : any
   form : FormGroup;
   constructor( 
     private fb : FormBuilder,
@@ -32,32 +32,40 @@ export class LoginComponent implements OnInit {
       password : formData.password,
       grant_type : 'password',
       client_id : 2,
-      client_secret : '0qQlD392L6TVSPOp4jBTmpljLvMmLyVA6iMQh7QR',
+      client_secret : 'FvXHEAeMvYwmRl2rFfqgy1Fvxa0vCJ9ZsTgUcndo',
       scope : '*'
     };
     this.http.post( 'http://localhost:8000/oauth/token', data).subscribe(
-        (result: any)  => {
+        (result:any)  => {
           localStorage.setItem('token', result.access_token);
           const headers = new HttpHeaders({
             'Authorization' : `Bearer ${localStorage.getItem('token')}`
           });
       
           this.http.get('http://localhost:8000/user', {headers}).subscribe(
-            (result)=> localStorage.setItem('user',JSON.stringify(result)),
+            (result)=> {
+              localStorage.setItem('user',JSON.stringify(result))
+              this.user = result
+              if(this.user.is_admin == 1){
+                this.router.navigate(['admin'])
+              }else if(this.user.is_admin == 0 || this.user.is_admin == null){
+                this.router.navigate(['secure'])
+              }else{
+                this.router.navigate([''])
+              }
+            },
             (error)=> {
               localStorage.removeItem('token');
               this.router.navigate(['/login']);
             });
-          
-          this.router.navigate(["secure"])
+          alert("Welcome to Expenses Tracker Application!")
         },
         error => {
-          console.log('error'),
-          console.log(error);
-          
+          alert("Credentials not found! Please register first!")
+          this.router.navigate(['/public/register']);
         }
-    )
-    
+        )
+        
   }
 
 }

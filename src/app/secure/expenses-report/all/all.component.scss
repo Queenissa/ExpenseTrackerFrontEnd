@@ -13,28 +13,28 @@ button {
     height: 2.5rem;
 }
 
-.topnav .search-container {
-    float: right;
+.search-container {
+    margin-left: 45rem;
 }
 
-.topnav input[type=text] {
+input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
     border: none;
 }
 
-.topnav .search-container button {
+.search-container button {
     float: right;
-    padding: 6px 10px;
+    padding: 3px 10px;
     margin-top: 8px;
     margin-right: 16px;
     background: #ddd;
-    font-size: 17px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
 }
 
-.topnav .search-container button:hover {
-    background: #ccc;
+.search-container button:hover {
+    background: lightblue;
 }

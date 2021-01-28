@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl ,FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,8 @@ export class RegisterComponent implements OnInit {
   form : FormGroup;
 
   constructor(private fb : FormBuilder,
-    private http : HttpClient
+    private http : HttpClient,
+    private router : Router
     ) { }
 
   ngOnInit(): void {
@@ -30,8 +32,8 @@ export class RegisterComponent implements OnInit {
     const formData = this.form.getRawValue();
 
     this.http.post('http://localhost:8000/register', formData).subscribe(
-      (result)=> console.log(result),
-      (error)=>console.log(error)
+      result =>
+      this.router.navigate(['/login'])
     );
   }
 

@@ -1,1 +1,23 @@
-<p>admin works!</p>
+<header class="h-100">
+    <mdb-navbar SideClass="navbar fixed-top stylish-color-dark navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav waves-light" class="navCss" [containerInside]="false">
+        <mdb-navbar-brand>
+            <a class="logo navbar-brand" href="#">
+                <img id="myLogo" src="../../assets/image/logo.png" alt="">
+            </a>
+        </mdb-navbar-brand>
+        <links>
+            <ul class="navbar-nav" style="margin-left: 90%;">
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a routerLink='/' class="nav-link" (click)='logout()'>Log-out</a>
+                </li>
+            </ul>
+        </links>
+    </mdb-navbar>
+</header>
+<div class="view intro-2">
+    <div class="bg-image">
+        <div class="text-center white-text wow fadeInUp">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

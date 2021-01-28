@@ -10,9 +10,8 @@ export class AllComponent implements OnInit {
 
   user : any;
   data:any;
-  // elements: any = [
-  //   { expense_date: '', expense_category: '', expense_amount: '', note : '' }
-  // ];
+  p = 1;
+
   elements:any = [];
 
   headElements = ['Expenditure Date', 'Type' ,'Amount', 'Description'];
@@ -34,13 +33,16 @@ export class AllComponent implements OnInit {
           let elementData = { expense_date: fullDate, expense_category: data.expense_category, expense_amount: data.expense_amount, note : data.note }
           this.elements.push(elementData)
         }
-        console.log(this.elements)
       }
       ,
        error  => {
           console.log('error'),
           console.log(error)
         }
-    )}
+    )} 
+
+    pageChange(event : any) {
+      this.p = event; 
+    }
 
 }

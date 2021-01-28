@@ -1,31 +1,26 @@
-<div class="card">
+<div class="card mt-5">
     <div class="card-body">
-        <h5 class="card-title mt-3 mb-5">Update Expenses</h5>
-        <form>
-            <div class="form-outline mb-3">
-                <label class="form-label" for="type">Type</label>
-                <select class="browser-default custom-select">
-                    <option selected>select</option>
-                    <option value="1">Clothing</option>
-                    <option value="2">Electricity Bill</option>
-                    <option value="3">Food</option>
-                    <option value="1">Personal Care</option>
-                    <option value="2">Phone Bill</option>
-                    <option value="3">Savings</option>
-                    <option value="2">Transportation</option>
-                    <option value="3">Water Bill</option>
+        <h5 class="card-title text-center mt-2 mb-4">Edit Savings Expense</h5>
+        <form [formGroup]="formUpdate" onsubmit="event.preventDefault()" (submit)="update()">
+            <div class="form-outline text-left mb-3">
+                <label class="form-label" for="type">Category</label>
+                <select formControlName='expense_category' class="browser-default custom-select" required>
+                    <option value="{{type}}" *ngFor="let type of types" [selected]="type == toUpdateData.expense_category">{{type}}</option>
                 </select>
             </div>
-            <div class="form-outline mb-3">
+            <div class="form-outline text-left mb-3">
                 <label class="form-label" for="amount">Amount</label>
-                <input type="password" id="amount" class="form-control" />
+                <input formControlName='expense_amount' type="number" id="amount" value="{{toUpdateData.expense_amount}}" class="form-control" required/>
             </div>
-            <div class="form-outline mb-3">
+            <div class="form-outline text-left mb-3">
+                <label class="form-label" for="note">Note</label>
+                <textarea formControlName="note" type="text" name="note" class="form-control" value="{{toUpdateData.note}}" required></textarea>
+            </div>
+            <div class="form-outline text-left mb-2">
                 <label class="form-label" for="date">Expenditure Date</label>
-                <input type="date" id="date" name="date" class="form-control">
+                <input formControlName="expense_date" type="date" id="date" name="date" class="form-control" value="{{toUpdateData.expense_date}}" required>
             </div>
-            <button type="submit" mdbBtn color="success" class="save" mdbWavesEffect>SAVE</button>
-            <button type="submit" mdbBtn color="success" mdbWavesEffect>ADD</button>
+            <button type="submit" mdbBtn color="success" class="btn-block mt-3" mdbWavesEffect>Save</button>
         </form>
     </div>
 </div>

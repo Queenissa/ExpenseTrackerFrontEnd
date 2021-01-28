@@ -11,6 +11,10 @@ const routes: Routes = [
     path : 'secure',
     loadChildren: () => import(`./secure/secure.module`).then(m => m.SecureModule)
   },
+  { 
+    path : 'admin', 
+    loadChildren: () => import(`./admin/admin.module`).then(m => m.AdminModule)
+  },
   { path : '', redirectTo : 'public', pathMatch : 'full'},
   { path : '**', component : PageNotFoundComponent}]
 

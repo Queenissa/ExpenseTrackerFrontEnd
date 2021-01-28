@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
   //Weekly Expenses
 
   public weeklyChartDataSets: Array<any> = [
-    { data: [150, 300, 100, 100, 100, 120, 100, 200], label: 'Last 7 days Expenses' }
+    { data:[0] }
   ];
 
   public weeklyChartOptions: any = {
@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
   //Monthly Expenses
 
   public monthlyChartDataSets: Array<any> = [
-    { data: [150, 300, 100, 100, 100, 120, 100, 200], label: 'Monthly Expenses' }
+    { data: [0] }
   ];
 
   public monthlyChartOptions: any = {
@@ -81,7 +81,7 @@ export class DashboardComponent implements OnInit {
   //Yearly Expenses
 
   public yearlyChartDataSets: Array<any> = [
-    { data: [150, 300, 100, 100, 100, 120, 100, 200], label: 'Yearly Expenses' }
+    { data: [0] }
   ];
 
   public yearlyChartOptions: any = {
@@ -114,7 +114,6 @@ export class DashboardComponent implements OnInit {
       }
     }).subscribe(
       (result) => {
-        console.log(result);
         var expenses = []
         var labels = []
         for (let index = 1; index < result.length; index++) {
@@ -130,8 +129,7 @@ export class DashboardComponent implements OnInit {
       }
       ,
       error => {
-        console.log('error'),
-          console.log(error)
+        console.log(error)
       }
     )
 
@@ -145,7 +143,6 @@ export class DashboardComponent implements OnInit {
       }
     }).subscribe(
       (result) => {
-        console.log(result);
         var expenses = []
         var labels = []
         for (let index = 1; index < result.length; index++) {
@@ -161,7 +158,6 @@ export class DashboardComponent implements OnInit {
       }
       ,
       error => {
-        console.log('error'),
           console.log(error)
       }
     )
@@ -172,7 +168,6 @@ export class DashboardComponent implements OnInit {
       }
     }).subscribe(
       (result) => {
-        console.log(result);
         var expenses = []
         var labels = []
         for (let index = 1; index < result.length; index++) {
@@ -188,7 +183,6 @@ export class DashboardComponent implements OnInit {
       }
       ,
       error => {
-        console.log('error'),
           console.log(error)
       }
     )
@@ -199,7 +193,6 @@ export class DashboardComponent implements OnInit {
       }
     }).subscribe(
       (result) => {
-        console.log(result);
         var expenses = []
         var labels = []
         for (let index = 1; index < result.length; index++) {
@@ -215,9 +208,8 @@ export class DashboardComponent implements OnInit {
       }
       ,
       error => {
-        console.log('error'),
           console.log(error)
       }
     )
   }
-}
+} 
